@@ -290,7 +290,7 @@ module.exports = {
     return new Promise(async (resolve, reject) => {
       this.ad.authenticate(fullUser, pass, (error, authorized) => {
         let code;
-        let out = authorized;
+        let out = { authorized };
         if (error && error.lde_message) {
           out.detail = error.lde_message;
           out.message = String(error.stack).split(':')[0];
